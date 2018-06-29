@@ -77,17 +77,17 @@ Include user picks that were popular that week, month, or all time.
 
 ### Home Page
 
-![Home Page](/Assets/NoodliciousWireFrame1.png  =250x)
+![Home Page](/Assets/NoodliciousWireFrame1.png)
 
 ---
 ### Read a Review
 
-![Read A Review](/Assets/Noodlicious_Detail.png  =250x)
+![Read A Review](/Assets/Noodlicious_Detail.png)
 
 ---
 ### Write A Review
 
-![Write A Review](/Assets/Noodlicious_Review.png  =250x)
+![Write A Review](/Assets/Noodlicious_Review.png)
 
 ---
 ### Edit Noodle Information
