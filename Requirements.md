@@ -92,4 +92,4 @@ Include user picks that were popular that week, month, or all time.
 ---
 ### Edit Noodle Information
 
-![Edit Noodle Information](/Assets/Noodlicious_Edit.png  =250x)
+![Edit Noodle Information](/Assets/Noodlicious_Edit.png)
