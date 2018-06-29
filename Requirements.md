@@ -1,39 +1,46 @@
 # Noodilicious
 
 ## 1. Vision
-**Product Vision** - Guide consumers to the best choices available.
-
-**Pain Point** - The noodle options are overwhelming.  This will guide consumers to the noodle product that matches them best.
-
-**Why Care?** - We aim to provide suggestions to curious _noodlrs_.
+Today packaged noodle options are overwhelming.  We want to combat choice paralysis.  Noodlicious aims to guide consumers to the packaged noodle choices best suited to their tastes.  Additionally, we aim to provide suggestions to curious _noodlers_.  No packaged noodles will be left behind.
 
 ## 2. Scope
-- **In**  
-  - allow users to add reviews for each kind of noodle.  
-  - reviewers also have the option to update or delete their reviews.  
-  - for the curious consumers, they can search for noodle information based on specific criteria, e.g country of origin, broth, flavors, etc  
+_**In**_  
+For the curious _noodler_, **Noodlicious** provides a list of packaged noodle options.  The _noodler_ can either see all choices, or they can choose to view a list of choices based on search criteria that they have selected.  There search criteria is based on options that includes: the name of the packaged noodle, the country of origin, the manufacturer and the flavor profile.
+
+For the experienced _noodler_, who have traversed the range of options, they can leave a review for a particular packaged noodle.  Doing so will add to the database of reviews that will benefit the curious _noodlers_.  If they are not happy with the review they had written, they can update it or completely delete it.
 
 
-- **Out** 
-  - Noodlicious cannot provide medical advice.
+_**Out**_ 
+
+Noodlicious cannot provide medical advice.
 
 ## 3. MVP
-- There will be 2 databases: the font end database will be for the reviews and the back end database will be for the noodle data.
+A database will be created for the API.  The front end will consume this database.  Additionally, the front end can 
+query the API database.  Front end users will have the capability to create, read, update and delete reviews they have entered.
 
-- The front end can 
-    - query the API
-    - perform CRUD operations on the reviews database
+Upon visiting the home page, the user will see the Noodle Finder Search.  The search bar has a drop down menu with the following default values: "sort by: rating", "flavor: all", "country: all."  Below this search bar is a preview of a list of noodles that have been reviewed.
 
-- There will be a user interface
+When the user selects a noodle review to read, they will see an image of the product, the brand of the packaged noodle, the country it's from, the flavor, and the user score. Within this area is an option to "Add a Review".  Below this will be the various reviews from other users that will include their comments. A thumbs up or thumbs down next to their comment to describe their sentiments about the packaged noodle.
+
+Should the user feel inclined to leave a review for the product they are looking at, they can click the "Add a Review" button and navigate to a form where they can type in their reviews as well as select a thumbs up or thumbs down to describe how they feel about the product.  For this to be stored in our database, they need to click the submit button under the form.
+
+For _noodlers_ who notice any mistakes about a packaged noodle, they can navigate to the "Edit Noodle Information" page.  From here, they can update information about the product like: the name, brand, country of origin, flavor and description.  Again, for the changes to be registered in our database, the user needs to click the submit button.
 
 
 ## 4. Stretch Goals
-  - Include analytics based on the words that users have typed
-  - provide analytics based noodle recommendations
+Include analytics based on the words that users have typed.  Provide analytics based noodle recommendations.  Look into either Parallax or MS Cognitive Services.
 
-  - Add admin functionality
+Use captcha to check if the user is a human.
 
-  - Use captcha to check if the user is a human
+Add user login with a password check, so they can only update or delete their reviews and not other reviews.  They can upvote or downvote other reviews or products, like a Reddit for noodles.  Add comment capabilities where they can leave comments on other reviews.  Link the user to their Gmail or Facebook account.
+
+Include pictures of the packaged noodle nutritional information and pictures of the product.  
+
+Navigate the user to a store or e-commerce site where they can buy the product they're viewing.
+
+Include staff picks of the week, month, or all time.
+
+Include user picks that were popular that week, month, or all time.
 
 ## 5. Functional Requirements
 - User can search for noodles based on search criteria
@@ -42,8 +49,9 @@
 - User can delete reviews
 
 ## 6. Non-Functional Requirements
-- Usability: a beautiful UI providing navigation to areas to add reviews, update reviews and read reviews
-- Testability: make sure the front end can query the appropriate data from the reviews or the noodles database
+- Usability: The features like read, add, update, or delete a review will be pleasant to use.  The user is able to arrive on page without encountering an error.  All pages will have navigation that will easily lead them to other parts of our site like read or update reviews.  It is possible to accomplish any task with a keyboard and mouse.  The program will not activate skynet.
+
+- Data Integrity: Data should be easy to understand.  Data should be recorded as it was observed and at the time it was entered or updated.  Data should be demonstrate who observed and recorded it.  Data should be accurate and free from errors.
 
 ## 7. Data Flow
 ![Data Flow Diagram](https://github.com/Noodlicious/app/blob/master/Assets/DataFlow.jpg)
