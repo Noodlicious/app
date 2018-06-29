@@ -46,4 +46,4 @@
 - Testability: make sure the front end can query the appropriate data from the reviews or the noodles database
 
 ## 7. Data Flow
-![Data Flow Diagram](https://github.com/Noodlicious/app/blob/master/Assets/NoodleDataFlowDiagram.jpg)
+![Data Flow Diagram](https://github.com/Noodlicious/app/blob/master/Assets/DataFlow.jpg)
