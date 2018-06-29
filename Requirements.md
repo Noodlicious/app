@@ -51,7 +51,7 @@ Include user picks that were popular that week, month, or all time.
 ## 6. Non-Functional Requirements
 - Usability: The features like read, add, update, or delete a review will be pleasant to use.  The user is able to arrive on page without encountering an error.  All pages will have navigation that will easily lead them to other parts of our site like read or update reviews.  It is possible to accomplish any task with a keyboard and mouse.  The program will not activate skynet.
 
-- Data Integrity: Data should be easy to understand.  Data should be recorded as it was observed and at the time it was entered or updated.  Data should be demonstrate who observed and recorded it.  Data should be accurate and free from errors.
+- Data Integrity: Data should be easy to understand.  Data should be recorded as upon observation, especially when it was entered or updated. Data should record it and be bound by entry. Data should be accurate and error-free.
 
 ## 7. Data Flow
 ![Data Flow Diagram](https://github.com/Noodlicious/app/blob/master/Assets/DataFlow.jpg)
