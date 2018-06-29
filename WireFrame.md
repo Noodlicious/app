@@ -1,8 +1,8 @@
-![Home Page](https://github.com/Noodlicious/app/blob/master/Assets/NoodliciousWireFrame1.png)
+![Home Page](/Assets/NoodliciousWireFrame1.png)
 
 -------------
 
-![Read A Review](https://github.com/Noodlicious/app/blob/master/Assets/Noodlicious_Detail.png)
+![Read A Review](/Assets/Noodlicious_Detail.png)
 
 -------------
 
