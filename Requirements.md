@@ -55,3 +55,24 @@ Include user picks that were popular that week, month, or all time.
 
 ## 7. Data Flow
 ![Data Flow Diagram](https://github.com/Noodlicious/app/blob/master/Assets/DataFlow.jpg)
+
+## 8. Wireframe
+
+### Home Page
+
+![Home Page](/Assets/NoodliciousWireFrame1.png)
+
+-------------
+### Read a Review
+
+![Read A Review](/Assets/Noodlicious_Detail.png)
+
+-------------
+### Write A Review
+
+![Write A Review](/Assets/Noodlicious_Review.png)
+
+-------------
+### Edit Noodle Information
+
+![Edit Noodle Information](/Assets/Noodlicious_Edit.png)
