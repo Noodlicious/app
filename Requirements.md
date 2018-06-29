@@ -1,18 +1,31 @@
 # Noodilicious
 
+## _Table of Contents_
+#### 1. Vision
+#### 2. Scope In/out
+#### 3. MVP
+#### 4. Stretch Goals
+#### 5. Functional Requirements
+#### 6. Non-Functional Requirements
+#### 7. Data Flow
+#### 8. Wireframe
+---
+
 ## 1. Vision
 Today packaged noodle options are overwhelming.  We want to combat choice paralysis.  Noodlicious aims to guide consumers to the packaged noodle choices best suited to their tastes.  Additionally, we aim to provide suggestions to curious _noodlers_.  No packaged noodles will be left behind.
 
+---
 ## 2. Scope
 _**In**_  
 For the curious _noodler_, **Noodlicious** provides a list of packaged noodle options.  The _noodler_ can either see all choices, or they can choose to view a list of choices based on search criteria that they have selected.  There search criteria is based on options that includes: the name of the packaged noodle, the country of origin, the manufacturer and the flavor profile.
 
 For the experienced _noodler_, who have traversed the range of options, they can leave a review for a particular packaged noodle.  Doing so will add to the database of reviews that will benefit the curious _noodlers_.  If they are not happy with the review they had written, they can update it or completely delete it.
 
-
 _**Out**_ 
 
 Noodlicious cannot provide medical advice.
+
+---
 
 ## 3. MVP
 A database will be created for the API.  The front end will consume this database.  Additionally, the front end can 
@@ -26,7 +39,7 @@ Should the user feel inclined to leave a review for the product they are looking
 
 For _noodlers_ who notice any mistakes about a packaged noodle, they can navigate to the "Edit Noodle Information" page.  From here, they can update information about the product like: the name, brand, country of origin, flavor and description.  Again, for the changes to be registered in our database, the user needs to click the submit button.
 
-
+---
 ## 4. Stretch Goals
 Include analytics based on the words that users have typed.  Provide analytics based noodle recommendations.  Look into either Parallax or MS Cognitive Services.
 
@@ -42,37 +55,41 @@ Include staff picks of the week, month, or all time.
 
 Include user picks that were popular that week, month, or all time.
 
+---
 ## 5. Functional Requirements
 - User can search for noodles based on search criteria
 - User can add reviews for each kind of noodle
 - User can update their reviews
 - User can delete reviews
 
+---
 ## 6. Non-Functional Requirements
 - Usability: The features like read, add, update, or delete a review will be pleasant to use.  The user is able to arrive on page without encountering an error.  All pages will have navigation that will easily lead them to other parts of our site like read or update reviews.  It is possible to accomplish any task with a keyboard and mouse.  The program will not activate skynet.
 
-- Data Integrity: Data should be easy to understand.  Data should be recorded upon observation, especially when it bounded by entry or updated. Data should be accurate and error-free. Data should be unbiased. The data should be untouchable by hacker manipulation.
+- Data Integrity: Data should be easy to understand.  Data should be recorded as it was observed and at the time it was entered or updated.  Data should be demonstrate who observed and recorded it.  Data should be accurate and free from errors.
 
+---
 ## 7. Data Flow
 ![Data Flow Diagram](https://github.com/Noodlicious/app/blob/master/Assets/DataFlow.jpg)
 
+---
 ## 8. Wireframe
 
 ### Home Page
 
 ![Home Page](/Assets/NoodliciousWireFrame1.png)
 
--------------
+---
 ### Read a Review
 
 ![Read A Review](/Assets/Noodlicious_Detail.png)
 
--------------
+---
 ### Write A Review
 
 ![Write A Review](/Assets/Noodlicious_Review.png)
 
--------------
+---
 ### Edit Noodle Information
 
 ![Edit Noodle Information](/Assets/Noodlicious_Edit.png)
