@@ -6,8 +6,8 @@
 
 -------------
 
-![Write A Review](/assets/Noodlicious_Review.png)
+![Write A Review](/Assets/Noodlicious_Review.png)
 
 -------------
 
-![Edit Noodle Information](/assets/Noodlicious_Edit.png)
+![Edit Noodle Information](/Assets/Noodlicious_Edit.png)
