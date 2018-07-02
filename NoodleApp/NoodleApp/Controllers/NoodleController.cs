@@ -9,7 +9,7 @@ namespace NoodleApp.Controllers
 {
     public class NoodleController : Controller
     {
-        public async Task<IActionResult> Index()
+        public async Task<string> GetAllNoodles()
         {
             using (var client = new HttpClient())
             {
@@ -22,8 +22,9 @@ namespace NoodleApp.Controllers
                 if (response.EnsureSuccessStatusCode().IsSuccessStatusCode)
                 {
                     var stringResult = await response.Content.ReadAsStringAsync();
+                    return stringResult;
                 }
-                return View();
+                return "";
             }
         }
     }
