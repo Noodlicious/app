@@ -13,5 +13,6 @@ namespace NoodleApp.Models
         [StringLength(60, MinimumLength = 3)]
         [Required]
         public string Name { get; set; }
+		public int NoodleId { get; set; }
     }
 }

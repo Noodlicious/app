@@ -1,0 +1,16 @@
+﻿@model List<NoodleApp.Models.Noodle>
+@using NoodleApp.Models
+
+@foreach (var item in Model)
+{
+	<h2>@item.Name</h2>
+	<p>@item.Brand</p>
+	<p>@item.Country</p>
+	<p>@item.Flavor</p>
+	<p>@item.Description</p>
+	<img src="@item.ImgUrl" />
+	<p>@item.Id</p>
+	<p><a asp-controller="Review" asp-action="Create" asp-route-id="@item.Id">Add review</a></p>
+	<p><a asp-controller="Noodle" asp-action="Details" asp-route-id="@item.Id">View Details</a></p>
+
+}
