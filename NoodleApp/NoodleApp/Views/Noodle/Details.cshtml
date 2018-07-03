@@ -1,0 +1,13 @@
+﻿@model NoodleApp.Models.Noodle
+
+
+<h1>Noodle Details</h1>
+
+<h2>@Model.Name</h2>
+<p>@Model.Brand</p>
+<p>@Model.Country</p>
+<p>@Model.Flavor</p>
+<p>@Model.Description</p>
+<img src="@Model.ImgUrl" />
+<p>@Model.Id</p>
+<p><a asp-controller="Home" asp-action="Index">Return Home</a></p>

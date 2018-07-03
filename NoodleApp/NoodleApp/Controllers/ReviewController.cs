@@ -25,29 +25,33 @@ namespace NoodleApp.Controllers
 		//search
 		//public async Task<IActionResult> SearchResult(string searchString)
 		//{
-		//	var students = from m in _context.Reviews
+		//	var review = from m in _context.Reviews
 		//				   select m;
 
 		//	if (!String.IsNullOrEmpty(searchString))
 		//	{
-		//		students = students.Where(s => s.Name.Contains(searchString));
+		//		review = review.Where(s => s.Name.Contains(searchString));
 		//	}
 
-		//	return View(await students.ToListAsync());
+		//	return View(await review.ToListAsync());
 		//}
 
 		//create
-		public async Task<IActionResult> Create()
+		public async Task<IActionResult> Create(int? id)
 		{
-			ViewData["Reviews"] = await _context.Reviews.Select(x => x)
+
+			ViewData["Courses"] = await _context.Reviews.Select(x => x.NoodleId == id)
 				.ToListAsync();
 			return View();
+			
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> Create([Bind("Name")]NoodleApp.Models.Review review)
+		public async Task<IActionResult> Create([Bind("Name, NoodleId")]NoodleApp.Models.Review review)
 		{
+			
 			_context.Reviews.Add(review);
+			
 			await _context.SaveChangesAsync();
 			return RedirectToAction("Index", "Home");
 		}
@@ -80,6 +84,7 @@ namespace NoodleApp.Controllers
 			if (id.HasValue)
 			{
 				Models.Review review = await _context.Reviews.FirstOrDefaultAsync(a => a.ID == id);
+				
 				return View(review);
 			}
 				return RedirectToAction("index", "home");
