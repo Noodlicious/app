@@ -40,7 +40,7 @@ namespace NoodleApp.Controllers
 		public async Task<IActionResult> Create(int? id)
 		{
 
-			ViewData["Courses"] = await _context.Reviews.Select(x => x.NoodleId == id)
+			ViewData["Reviews"] = await _context.Reviews.Select(x => x.NoodleId == id)
 				.ToListAsync();
 			return View();
 			
