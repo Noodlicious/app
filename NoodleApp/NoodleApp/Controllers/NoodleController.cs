@@ -33,14 +33,17 @@ namespace NoodleApp.Controllers
 
                 if (response.EnsureSuccessStatusCode().IsSuccessStatusCode)
                 {
+
                     var stringResult = await response.Content.ReadAsStringAsync();
 					var obj = JsonConvert.DeserializeObject<List<Noodle>>(stringResult);
+
                     return View(obj);
                 }
               
             }
 			return View();
 		}
+
 
 		public async Task<IActionResult> Details(int? id)
 		{

@@ -9,8 +9,8 @@ using NoodleApp.Data;
 namespace NoodleApp.Migrations
 {
     [DbContext(typeof(NoodleFrontDbContext))]
-    [Migration("20180702231403_CRUDtest")]
-    partial class CRUDtest
+    [Migration("20180703210254_intial")]
+    partial class intial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,14 +22,24 @@ namespace NoodleApp.Migrations
 
             modelBuilder.Entity("NoodleApp.Models.Noodle", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Brand");
+
+                    b.Property<string>("Country");
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("Flavor");
+
+                    b.Property<string>("ImgUrl");
 
                     b.Property<string>("Name")
                         .IsRequired();
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Noodles");
                 });
@@ -43,6 +53,8 @@ namespace NoodleApp.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(60);
+
+                    b.Property<int>("NoodleId");
 
                     b.HasKey("ID");
 
