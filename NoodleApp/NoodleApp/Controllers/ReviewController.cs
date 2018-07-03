@@ -37,10 +37,10 @@ namespace NoodleApp.Controllers
 		//}
 
 		//create
-		public async Task<IActionResult> Create(int? id)
+		public async Task<IActionResult> Create()
 		{
 
-			ViewData["Reviews"] = await _context.Reviews.Select(x => x.NoodleId == id)
+			ViewData["Courses"] = await _context.Reviews.Select(x => x.NoodleId == id)
 				.ToListAsync();
 			return View();
 			
@@ -63,7 +63,7 @@ namespace NoodleApp.Controllers
 			if (id.HasValue)
 			{
 
-				return View(await _context.Reviews.Where(s => s.ID == id)
+				return View(await _context.Reviews.Where(s => s.NoodleId == id)
 					.SingleAsync());
 			}
 			return View();
@@ -83,7 +83,7 @@ namespace NoodleApp.Controllers
 		{
 			if (id.HasValue)
 			{
-				Models.Review review = await _context.Reviews.FirstOrDefaultAsync(a => a.ID == id);
+				Models.Review review = await _context.Reviews.FirstOrDefaultAsync(a => a.NoodleId == id);
 				
 				return View(review);
 			}
