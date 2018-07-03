@@ -1,19 +1,13 @@
 ﻿@using NoodleApp.Models
 @model NoodleApp.Models.Review
 
-<h2>Update @Model.Name</h2>
+<h1>Update Review</h1>
 
-<form method="post" asp-action="Update">
+<form asp-action="Update">
 
-	@*<div>
+	<label asp-for="Name"> Name: </label>
+	<input asp-for="Name" />
+	<input asp-controller="Review" asp-action="Update" type="submit"/>
 
-			<label asp-for="Name">Name </label>
-
-			<input asp-for="Name" value="@Model.Name" />
-		</div>*@
-
-	<div>
-
-		<input type="submit" value="Update" />
-	</div>
+	
 </form>

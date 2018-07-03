@@ -74,42 +74,42 @@ namespace NoodleApp.Controllers
 		}
 
 		//update
-		//[HttpGet]
-		//public async Task<IActionResult> Update(int? id)
-		//{
-		//	if (id.HasValue)
-		//	{
-		//		Models.Student student = await _context.Students.FirstOrDefaultAsync(a => a.ID == id);
-		//		return View(student);
-		//	}
-		//	return RedirectToAction("Index", "Home");
-		//}
+		[HttpGet]
+		public async Task<IActionResult>Update(int? id)
+		{
+			if (id.HasValue)
+			{
+				Models.Review review = await _context.Reviews.FirstOrDefaultAsync(a => a.ID == id);
+				return View(review);
+			}
+				return RedirectToAction("index", "home");
+		}
 
-		//[HttpPost]
-		//public async Task<IActionResult> Update([Bind("ID, Name, SpyAlias, CourseId")]Models.Student student)
-		//{
-		//	_context.Students.Update(student);
+		[HttpPost]
+		public async Task<IActionResult> Update([Bind("ID, Name")]Models.Review review)
+		{
+			_context.Reviews.Update(review);
 
-		//	await _context.SaveChangesAsync();
+			await _context.SaveChangesAsync();
 
-		//	return RedirectToAction("Index", "Home");
-		//}
+			return RedirectToAction("Index", "Home");
+		}
 
-		////delete
-		//public async Task<IActionResult> Delete(int id)
-		//{
-		//	var student = await _context.Students.FindAsync(id);
+		//delete
+		public async Task<IActionResult>Delete(int id)
+		{
+			var review = await _context.Reviews.FindAsync(id);
 
 
-		//	if (student == null)
-		//	{
-		//		return NotFound();
-		//	}
+			if (review == null)
+			{
+				return NotFound();
+			}
 
-		//	_context.Students.Remove(student);
-		//	await _context.SaveChangesAsync();
+			_context.Reviews.Remove(review);
+			await _context.SaveChangesAsync();
 
-		//	return RedirectToAction("Index", "Home");
-		//}
+			return RedirectToAction("Index", "Home");
+		}
 	}
 }
