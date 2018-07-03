@@ -10,4 +10,5 @@
 <p>@Model.Description</p>
 <img src="@Model.ImgUrl" />
 <p>@Model.Id</p>
+<p><a asp-controller="Review" asp-action="Create" asp-route-id="@Model.Id">Add review</a></p>
 <p><a asp-controller="Home" asp-action="Index">Return Home</a></p>
