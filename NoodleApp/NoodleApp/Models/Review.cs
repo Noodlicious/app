@@ -9,13 +9,14 @@ namespace NoodleApp.Models
 {
     public class Review
     {
-		[Key]
+		
         public int ID { get; set; }
 
         [StringLength(60, MinimumLength = 3)]
         [Required]
         public string Name { get; set; }
-	
+		
+		
 		public int NoodleId { get; set; }
 
     }

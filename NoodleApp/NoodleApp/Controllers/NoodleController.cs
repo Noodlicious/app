@@ -81,6 +81,8 @@ namespace NoodleApp.Controllers
 					{
 						var stringResult = await response.Content.ReadAsStringAsync();
 						var obj = JsonConvert.DeserializeObject<Noodle>(stringResult);
+						var reviewsForThisNoodle = await _context.Reviews.Where(x => x.NoodleId == id).ToListAsync();
+						
 						return View(obj);
 					}
 				}	
