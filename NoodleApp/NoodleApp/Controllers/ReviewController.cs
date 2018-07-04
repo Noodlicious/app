@@ -91,21 +91,21 @@ namespace NoodleApp.Controllers
 			return View(data);
 		}
 
-		/// <summary>
+	
 		/// method to get id of review to update
 		/// </summary>
 		/// <param name="id">nullable integer corresponding to primary key id for review in database</param>
 		/// <returns>returns review to update</returns>
 		[HttpGet]
-		public async Task<IActionResult>Update(int? id)
+		public async Task<IActionResult> Update(int? id)
 		{
 			if (id.HasValue)
 			{
-				Models.Review review = await _context.Reviews.FirstOrDefaultAsync(a => a.NoodleId == id);
-				
+				var review = await _context.Reviews.FirstOrDefaultAsync(a => a.ID== id);
+
 				return View(review);
 			}
-				return RedirectToAction("index", "home");
+			return RedirectToAction("index", "home");
 		}
 
 		/// <summary>
@@ -114,7 +114,7 @@ namespace NoodleApp.Controllers
 		/// <param name="review">review object with bound properties from form</param>
 		/// <returns>saves changes to database and returns to home index</returns>
 		[HttpPost]
-		public async Task<IActionResult> Update([Bind("ID, Name")]Models.Review review)
+		public async Task<IActionResult> Update([Bind("ID, Name, NoodleId")]Models.Review review)
 		{
 			_context.Reviews.Update(review);
 
@@ -130,7 +130,7 @@ namespace NoodleApp.Controllers
 		/// <returns>deletes entry from database and returns to home index</returns>
 		public async Task<IActionResult>Delete(int id)
 		{
-			var review = await _context.Reviews.FindAsync(id);
+			var review = await _context.Reviews.FirstOrDefaultAsync(x=> x.NoodleId == id);
 
 
 			if (review == null)
