@@ -8,7 +8,7 @@ namespace NoodleApp.Models
 {
 	public class Noodle
 	{
-		
+		[Key]
 		public int Id { get; set; }
 
 		[Required]
@@ -18,6 +18,7 @@ namespace NoodleApp.Models
 		public string Flavor { get; set; }
 		public string ImgUrl { get; set; }
 		public string Description { get; set; }
+	
 		
     }
 }

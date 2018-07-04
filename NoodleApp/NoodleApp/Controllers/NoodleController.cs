@@ -44,6 +44,25 @@ namespace NoodleApp.Controllers
 			return View();
 		}
 
+		public async Task<IActionResult> Create()
+		{
+
+			ViewData["Noodles"] = await _context.Noodles.Select(x => x)
+				.ToListAsync();
+			return View();
+
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> Create([Bind("Id, Name, Country, Brand, Flavor, ImgUrl, Description")]NoodleApp.Models.Noodle noodle)
+		{
+
+			_context.Noodles.Add(noodle);
+
+			await _context.SaveChangesAsync();
+			return RedirectToAction("Index", "Home");
+		}
+
 
 		public async Task<IActionResult> Details(int? id)
 		{
