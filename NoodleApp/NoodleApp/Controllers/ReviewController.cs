@@ -37,19 +37,23 @@ namespace NoodleApp.Controllers
 		//}
 
 		//create
-		public async Task<IActionResult> Create()
+		public async Task<IActionResult> Create(int? id)
 		{
-
-			ViewData["Courses"] = await _context.Reviews.Select(x => x.NoodleId == id)
+            if(id.HasValue)
+            {
+			ViewData["Reviews"] = await _context.Reviews.Select(x => x)
 				.ToListAsync();
 			return View();
-			
+            }
+            else
+            {
+                return RedirectToAction("Exception", "Index");
+            }
 		}
 
 		[HttpPost]
 		public async Task<IActionResult> Create([Bind("Name, NoodleId")]NoodleApp.Models.Review review)
 		{
-			
 			_context.Reviews.Add(review);
 			
 			await _context.SaveChangesAsync();
@@ -66,8 +70,10 @@ namespace NoodleApp.Controllers
 				return View(await _context.Reviews.Where(s => s.NoodleId == id)
 					.SingleAsync());
 			}
-			return View();
-
+            else
+            {
+                return RedirectToAction("Exception", "Index");
+            }
 		}
 
 		public async Task<IActionResult> ViewAll()
