@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NoodleApp.Data;
+using NoodleApp.Models;
 
 namespace NoodleApp.Controllers
 {
@@ -37,20 +38,31 @@ namespace NoodleApp.Controllers
 		//}
 
 		//create
-		public async Task<IActionResult> Create()
+		public async Task<IActionResult> Create(int? id)
 		{
+			ReviewViewModel newModel = new ReviewViewModel();
+			newModel.NoodleId = id.Value;
+		
+			newModel.Review = new Review();
 
-			ViewData["Courses"] = await _context.Reviews.Select(x => x.NoodleId == id)
+
+			await _context.Reviews.Select(x => x)
+
 				.ToListAsync();
-			return View();
+			return View(newModel);
 			
 		}
 
+		/// <summary>
+		/// second half of method to create a new review 
+		/// </summary>
+		/// <param name="file">ReviewViewModel object</param>
+		/// <returns>saves entry into review database and returns to home screen</returns>
 		[HttpPost]
-		public async Task<IActionResult> Create([Bind("Name, NoodleId")]NoodleApp.Models.Review review)
+		public async Task<IActionResult> Create(ReviewViewModel file)
 		{
-			
-			_context.Reviews.Add(review);
+			file.Review.NoodleId = file.NoodleId;
+			_context.Reviews.Add(file.Review);
 			
 			await _context.SaveChangesAsync();
 			return RedirectToAction("Index", "Home");
@@ -77,7 +89,11 @@ namespace NoodleApp.Controllers
 			return View(data);
 		}
 
-		//update
+		/// <summary>
+		/// method to get id of review to update
+		/// </summary>
+		/// <param name="id">nullable integer corresponding to primary key id for review in database</param>
+		/// <returns>returns review to update</returns>
 		[HttpGet]
 		public async Task<IActionResult>Update(int? id)
 		{
@@ -90,6 +106,11 @@ namespace NoodleApp.Controllers
 				return RedirectToAction("index", "home");
 		}
 
+		/// <summary>
+		/// method to post update data from form
+		/// </summary>
+		/// <param name="review">review object with bound properties from form</param>
+		/// <returns>saves changes to database and returns to home index</returns>
 		[HttpPost]
 		public async Task<IActionResult> Update([Bind("ID, Name")]Models.Review review)
 		{
@@ -100,7 +121,11 @@ namespace NoodleApp.Controllers
 			return RedirectToAction("Index", "Home");
 		}
 
-		//delete
+		/// <summary>
+		/// method to delete review entry from database
+		/// </summary>
+		/// <param name="id">nullable id corresponding to integer primary key in database</param>
+		/// <returns>deletes entry from database and returns to home index</returns>
 		public async Task<IActionResult>Delete(int id)
 		{
 			var review = await _context.Reviews.FindAsync(id);

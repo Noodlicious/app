@@ -9,7 +9,7 @@ namespace NoodleApp.Models
 {
     public class Review
     {
-		
+		[Key]
         public int ID { get; set; }
 
         [StringLength(60, MinimumLength = 3)]
