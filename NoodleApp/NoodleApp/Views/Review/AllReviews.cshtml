@@ -1,0 +1,13 @@
+﻿@model List<NoodleApp.Models.Review>
+
+@foreach (var item in Model)
+{
+	<table>
+		<tr>
+			<td>Review: @item.Name</td>
+		</tr>
+	</table>
+	<p><a asp-controller="Review" asp-action="Update" asp-route-id="@item.ID">Update Review</a></p>
+	<p><a asp-controller="Review" asp-action="Delete" asp-route-id="@item.ID">Delete Review</a></p>
+
+}

@@ -1,5 +1,5 @@
 ﻿@model NoodleApp.Models.Noodle
-
+<link href="~/StyleSheet.css" rel="stylesheet" type="text/css" />
 
 <h1>Noodle Details</h1>
 
@@ -10,5 +10,7 @@
 <p>@Model.Description</p>
 <img src="@Model.ImgUrl" />
 <p>@Model.Id</p>
+
+<h2><a asp-controller="Review" asp-action="AllReviews" asp-route-id="@Model.Id">What are people saying about @Model.Name ?</a></h2>
 <p><a asp-controller="Review" asp-action="Create" asp-route-id="@Model.Id">Add review</a></p>
 <p><a asp-controller="Home" asp-action="Index">Return Home</a></p>
