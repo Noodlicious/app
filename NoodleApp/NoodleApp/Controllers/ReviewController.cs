@@ -45,8 +45,9 @@ namespace NoodleApp.Controllers
 		
 			newModel.Review = new Review();
 
-			//ViewData["Reviews"] = 
+
 			await _context.Reviews.Select(x => x)
+
 				.ToListAsync();
 			return View(newModel);
 			
