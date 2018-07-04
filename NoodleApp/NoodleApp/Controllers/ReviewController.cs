@@ -11,13 +11,24 @@ namespace NoodleApp.Controllers
 {
     public class ReviewController : Controller
     {
+		/// <summary>
+		/// controller index view
+		/// </summary>
+		/// <returns>returns user to Review index page</returns>
         public IActionResult Index()
         {
             return View();
         }
 
+		/// <summary>
+		/// private context using database context
+		/// </summary>
 		private NoodleFrontDbContext _context;
 
+		/// <summary>
+		/// method to set review controller context to private context property
+		/// </summary>
+		/// <param name="context"></param>
 		public ReviewController(NoodleFrontDbContext context)
 		{
 			_context = context;
@@ -38,16 +49,19 @@ namespace NoodleApp.Controllers
 		//}
 
 
+
 		/// <summary>
 		/// action to open create form when clicking on hyperlink
 		/// </summary>
 		/// <param name="id">nullable id integer corresponding to API database primary key</param>
+
 		/// <returns></returns>
 		public async Task<IActionResult> Create(int? id)
 		{
 			ReviewViewModel newModel = new ReviewViewModel();
 			newModel.NoodleId = id.Value;
 			newModel.Review = new Review();
+      
 			await _context.Reviews.Select(x => x)
 				.ToListAsync();
 
@@ -70,20 +84,27 @@ namespace NoodleApp.Controllers
 			return RedirectToAction("Index", "Home");
 		}
 
-		//read
-
-		public async Task<IActionResult> Details(int? id)
+		/// <summary>
+		/// method to read review all reviews for a noodle type
+		/// </summary>
+		/// <param name="id">nullable integer id from review NoodleId</param>
+		/// <returns></returns>
+		public async Task<IActionResult> AllReviews(int? id)
 		{
 			if (id.HasValue)
 			{
 
 				return View(await _context.Reviews.Where(s => s.NoodleId == id)
-					.SingleAsync());
+					.ToListAsync());
 			}
 			return View();
 
 		}
 
+		/// <summary>
+		/// method to view all reviews
+		/// </summary>
+		/// <returns>list of all reviews</returns>
 		public async Task<IActionResult> ViewAll()
 		{
 			var data = await _context.Reviews.ToListAsync();
@@ -117,9 +138,7 @@ namespace NoodleApp.Controllers
 		public async Task<IActionResult> Update([Bind("ID, Name, NoodleId")]Models.Review review)
 		{
 			_context.Reviews.Update(review);
-
 			await _context.SaveChangesAsync();
-
 			return RedirectToAction("Index", "Home");
 		}
 
@@ -130,8 +149,7 @@ namespace NoodleApp.Controllers
 		/// <returns>deletes entry from database and returns to home index</returns>
 		public async Task<IActionResult>Delete(int id)
 		{
-			var review = await _context.Reviews.FirstOrDefaultAsync(x=> x.NoodleId == id);
-
+			var review = await _context.Reviews.FirstOrDefaultAsync(x=> x.ID == id);
 
 			if (review == null)
 			{
