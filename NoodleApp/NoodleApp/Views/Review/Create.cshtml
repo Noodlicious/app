@@ -1,11 +1,11 @@
 ﻿@using NoodleApp.Models
 @model NoodleApp.Models.Review
 
-<h2> @ViewData["Reviews"]</h2>
+<h2>Ramen Review!</h2>
 
 <form asp-action="Create">
 
-	<label asp-for="Name">Name: </label>
+	<label asp-for="Name">Enter your review: </label>
 	<input asp-for="Name" />
 	<input type="hidden" asp-for="NoodleId" />
 

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace NoodleApp.Migrations
 {
-    public partial class intial : Migration
+    public partial class pr6 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -41,7 +41,7 @@ namespace NoodleApp.Controllers
 		{
             if(id.HasValue)
             {
-			ViewData["Reviews"] = await _context.Reviews.Select(x => x)
+			ViewData["Reviews"] = await _context.Reviews.Select(x => x.NoodleId == id)
 				.ToListAsync();
 			return View();
             }
