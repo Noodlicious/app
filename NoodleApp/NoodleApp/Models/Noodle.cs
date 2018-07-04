@@ -19,5 +19,7 @@ namespace NoodleApp.Models
 		public string ImgUrl { get; set; }
 		public string Description { get; set; }
 		
+	
+		
     }
 }

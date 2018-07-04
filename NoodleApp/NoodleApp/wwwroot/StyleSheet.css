@@ -2,3 +2,8 @@
 {
     font-style: italic;
 }
+
+body img {
+	max-height: 100px;
+	max-width: 100px;
+}

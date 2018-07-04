@@ -1,6 +1,8 @@
 ﻿@model List<NoodleApp.Models.Noodle>
 @using NoodleApp.Models
 
+<link href="~/StyleSheet.css" rel="stylesheet" type="text/css"/>
+
 @foreach (var item in Model)
 {
 	<h2>@item.Name</h2>
@@ -12,5 +14,4 @@
 	<p>@item.Id</p>
 	
 	<p><a asp-controller="Noodle" asp-action="Details" asp-route-id="@item.Id">View Details</a></p>
-
 }
