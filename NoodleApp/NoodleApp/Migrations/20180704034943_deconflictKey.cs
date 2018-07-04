@@ -2,7 +2,7 @@
 
 namespace NoodleApp.Migrations
 {
-    public partial class test2 : Migration
+    public partial class deconflictKey : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

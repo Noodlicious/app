@@ -16,5 +16,6 @@ namespace NoodleApp.Models
 		/// id taken from api data to be used in server database
 		/// </summary>
 		public int NoodleId { get; set; }
+
     }
 }
