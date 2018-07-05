@@ -48,18 +48,20 @@ namespace NoodleApp.Controllers
 		//	return View(await review.ToListAsync());
 		//}
 
+
+
 		/// <summary>
-		/// method to create a new review
+		/// action to open create form when clicking on hyperlink
 		/// </summary>
-		/// <param name="id">nullable integer linked to primary key of API noodle ID</param>
+		/// <param name="id">nullable id integer corresponding to API database primary key</param>
+
 		/// <returns></returns>
 		public async Task<IActionResult> Create(int? id)
 		{
 			ReviewViewModel newModel = new ReviewViewModel();
 			newModel.NoodleId = id.Value;
-		
 			newModel.Review = new Review();
-
+      
 			await _context.Reviews.Select(x => x)
 				.ToListAsync();
 

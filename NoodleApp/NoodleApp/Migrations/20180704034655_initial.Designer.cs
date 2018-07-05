@@ -9,8 +9,8 @@ using NoodleApp.Data;
 namespace NoodleApp.Migrations
 {
     [DbContext(typeof(NoodleFrontDbContext))]
-    [Migration("20180703210254_intial")]
-    partial class intial
+    [Migration("20180704034655_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -58,7 +58,17 @@ namespace NoodleApp.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasIndex("NoodleId");
+
                     b.ToTable("Reviews");
+                });
+
+            modelBuilder.Entity("NoodleApp.Models.Review", b =>
+                {
+                    b.HasOne("NoodleApp.Models.Noodle")
+                        .WithMany("ReviewList")
+                        .HasForeignKey("NoodleId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
