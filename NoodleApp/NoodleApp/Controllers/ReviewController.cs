@@ -34,22 +34,7 @@ namespace NoodleApp.Controllers
 			_context = context;
 		}
 
-		//search
-		//public async Task<IActionResult> SearchResult(string searchString)
-		//{
-		//	var review = from m in _context.Reviews
-		//				   select m;
-
-		//	if (!String.IsNullOrEmpty(searchString))
-		//	{
-		//		review = review.Where(s => s.Name.Contains(searchString));
-		//	}
-
-		//	return View(await review.ToListAsync());
-		//}
-
-
-
+		
 		/// <summary>
 		/// action to open create form when clicking on hyperlink
 		/// </summary>

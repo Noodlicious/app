@@ -76,9 +76,13 @@ namespace NoodleApp.Controllers
 			 await _context.Noodles.Select(x => x)
 				.ToListAsync();
 			return View();
-
 		}
 
+		/// <summary>
+		/// method to send new noodle data to API
+		/// </summary>
+		/// <param name="noodle">Noodle Object</param>
+		/// <returns>view of new noodle</returns>
 		[HttpPost]
 		public async Task<IActionResult> SendNoodle([Bind("Id, Name, BrandId, Flavor, Description, ImgUrl")]Noodle noodle)
 		{
@@ -132,7 +136,21 @@ namespace NoodleApp.Controllers
 				}	
 			}
 			return View();
+		}
 
+		//search
+		public async Task<IActionResult> SearchResult(string searchString)
+		{
+			var noodle = from m in _context.Noodles
+						   select m;
+
+			if (!String.IsNullOrEmpty(searchString))
+			{
+				noodle = noodle.Where(s => s.Name.Contains(searchString));
+				
+			}
+
+			return View(await noodle.ToListAsync());
 		}
 	}
 }

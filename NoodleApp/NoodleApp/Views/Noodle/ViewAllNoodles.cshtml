@@ -3,6 +3,13 @@
 
 <link href="~/StyleSheet.css" rel="stylesheet" type="text/css" />
 
+<form asp-controller="Noodle" asp-action="SearchResult">
+	<p>
+		Search for Noodle: <input type="text" name="SearchString">
+		<input type="submit" value="Filter" />
+	</p>
+</form>
+
 @foreach (var item in Model)
 {
 	<h2>Name: @item.Name</h2>

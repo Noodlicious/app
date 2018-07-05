@@ -1,0 +1,17 @@
+﻿@model List<NoodleApp.Models.Noodle>
+
+<link href="~/StyleSheet.css" type="text/css" rel="stylesheet" />
+<h2>Search Results </h2>
+
+@foreach (var x in Model)
+{
+	
+			<p>@x.Name</p>
+			<p>@x.BrandId</p>
+			<p>@x.Flavor</p>
+			<p>@x.Description</p>
+			<p><img src="@x.ImgUrl" /></p>
+			<p>@x.Id</p>
+	
+	<p><a asp-controller="Noodle" asp-action="Details" asp-route-id="@x.Id">View Details</a></p>
+}
