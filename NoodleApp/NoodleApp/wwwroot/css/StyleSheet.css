@@ -1,0 +1,13 @@
+﻿h2 
+{
+    font-style: italic;
+}
+
+body img {
+	max-height: 100px;
+	max-width: 100px;
+}
+
+/*.selector-for-some-widget {
+    box-sizing: content-box;
+}*/
