@@ -138,7 +138,11 @@ namespace NoodleApp.Controllers
 			return View();
 		}
 
-		//search
+		/// <summary>
+		/// method to search noodle results
+		/// </summary>
+		/// <param name="searchString">user input string to search for</param>
+		/// <returns>list view of noodles matching results</returns>
 		public async Task<IActionResult> SearchResult(string searchString)
 		{
 			var noodle = from m in _context.Noodles
