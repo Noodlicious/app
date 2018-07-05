@@ -1,14 +1,16 @@
 ﻿@using NoodleApp.Models
 @model NoodleApp.Models.ReviewViewModel
+@{
+    Layout = "_Layout";
+}
 
 <h2> Let us know what you think!</h2>
 <p>@Model.NoodleId</p>
 <form method="post" asp-action="Create">
 
-	<label asp-for="@Model.Review.Name">Review: </label>
-	<input asp-for="@Model.Review.Name" />
-	<input asp-for="NoodleId" type="hidden" />
+    <label asp-for="@Model.Review.Name">Review: </label>
+    <input asp-for="@Model.Review.Name" />
+    <input asp-for="NoodleId" type="hidden" />
 
-	<input type="submit" value="Create" />
-
+    <input type="submit" value="Create" />
 </form>

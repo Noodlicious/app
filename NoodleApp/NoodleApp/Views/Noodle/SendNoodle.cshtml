@@ -1,35 +1,35 @@
-﻿
-@using NoodleApp.Models
+﻿@using NoodleApp.Models
 @model NoodleApp.Models.ViewNoodle
+@{
+    Layout = "_Layout";
+}
 
 <h2> Create a New Noodle</h2>
 
 <form asp-controller="Noodle" asp-action="SendNoodle">
 
-	<input asp-for="@Model.Id" type="hidden" />
+    <input asp-for="@Model.Id" type="hidden" />
 
-	<label asp-for="@Model.Name">Noodle: </label>
-	<input asp-for="@Model.Name" />
+    <label asp-for="@Model.Name">Noodle: </label>
+    <input asp-for="@Model.Name" />
 
-	<input asp-for="@Model.BrandId" type="hidden" />
+    <input asp-for="@Model.BrandId" type="hidden" />
 
+    <label asp-for="@Model.Flavor">Flavor: </label>
+    <input asp-for="@Model.Flavor" />
 
-	<label asp-for="@Model.Flavor">Flavor: </label>
-	<input asp-for="@Model.Flavor" />
+    <label asp-for="@Model.ImgUrl">Image Link: </label>
+    <input asp-for="@Model.ImgUrl" />
 
-	<label asp-for="@Model.ImgUrl">Image Link: </label>
-	<input asp-for="@Model.ImgUrl" />
+    <label asp-for="@Model.Description">Description: </label>
+    <input asp-for="@Model.Description" />
 
-	<label asp-for="@Model.Description">Description: </label>
-	<input asp-for="@Model.Description" />
+    "id": 0,
+    "name": "string",
+    "brandId": 0,
+    "flavor": "string",
+    "imgUrl": "string",
+    "description": "string"
 
-	"id": 0,
-	"name": "string",
-	"brandId": 0,
-	"flavor": "string",
-	"imgUrl": "string",
-	"description": "string"
-
-	<input type="submit" value="SendNoodle" />
-
+    <input type="submit" value="SendNoodle" />
 </form>

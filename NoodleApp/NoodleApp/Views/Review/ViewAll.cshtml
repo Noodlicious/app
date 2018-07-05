@@ -1,16 +1,17 @@
 ﻿@model List<NoodleApp.Models.Review>
-
+@{
+    Layout = "_Layout";
+}
 
 <h2>All reviews for noodles </h2>
 
 @foreach (var x in Model)
 {
-	<table>
-		<tr>
-			<td>Review: @x.Name</td>
-
-		</tr>
-	</table>
-	<p><a asp-controller="Review" asp-action="Update" asp-route-id="@x.ID">Update Review</a></p>
-	<p><a asp-controller="Review" asp-action="Delete" asp-route-id="@x.NoodleId">Delete Review</a></p>
+    <table>
+        <tr>
+            <td>Review: @x.Name</td>
+        </tr>
+    </table>
+    <p><a asp-controller="Review" asp-action="Update" asp-route-id="@x.ID">Update Review</a></p>
+    <p><a asp-controller="Review" asp-action="Delete" asp-route-id="@x.NoodleId">Delete Review</a></p>
 }
