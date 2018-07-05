@@ -5,12 +5,15 @@
 
 <h1>Noodle Details</h1>
 
-<h2>@Model.Name</h2>
-<p>@Model.BrandId</p>
-<p>@Model.Flavor</p>
-<p>@Model.Description</p>
+<h2>Who's there? <strong>@Model.Name</strong>, that's who!</h2>
+
+<p>Mmm...that taste of: <strong>@Model.Flavor</strong></p>
+<p><strong>What about it?</strong> @Model.Description</p>
 <img src="@Model.ImgUrl" />
-<p>@Model.Id</p>
+<p>The people have spoken. User Score: Likes @Model.Likes Dislikes @Model.Dislikes</p>
+
+<p><a asp-controller="Noodle" asp-action="TallyLikes" asp-route-id="@Model.Id">Thumbs up</a></p>
+<p><a asp-controller="Noodle" asp-action="TallyDislikes" asp-route-id="@Model.Id">Thumbs down</a></p>
 
 <h2><a asp-controller="Review" asp-action="AllReviews" asp-route-id="@Model.Id">What are people saying about @Model.Name ?</a></h2>
 <p><a asp-controller="Review" asp-action="Create" asp-route-id="@Model.Id">Add review</a></p>
