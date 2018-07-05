@@ -7,13 +7,12 @@ namespace NoodleApp.Models
 {
     public class ViewNoodle
     {
-		public int? Id { get; set; }
+        public int? Id { get; set; }
 
-		
-		public string Name { get; set; }
-		public int? BrandId { get; set; }
-		public string Flavor { get; set; }
-		public string ImgUrl { get; set; }
-		public string Description { get; set; }
-	}
+        public string Name { get; set; }
+        public int? BrandId { get; set; }
+        public string Flavor { get; set; }
+        public string ImgUrl { get; set; }
+        public string Description { get; set; }
+    }
 }

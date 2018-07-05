@@ -1,6 +1,13 @@
-﻿<h1>Ohai noodlrs</h1>
-<p><a asp-controller="Noodle" asp-action="ViewAllNoodles">Click here to get all noodles</a></p>
+﻿@{
+    Layout = "_Layout";
+}
 
-<p><a asp-controller="Review" asp-action="ViewAll">View reviews</a></p>
+<div class="container-fluid">
+    <h1>Ohai noodlrs</h1>
 
-<p><a asp-controller="Noodle" asp-action="SendNoodle">Create new noodle</a></p>
+    <p><a asp-controller="Noodle" asp-action="ViewAllNoodles">Click here to get all noodles</a></p>
+
+    <p><a asp-controller="Review" asp-action="ViewAll">View reviews</a></p>
+
+    <p><a asp-controller="Noodle" asp-action="SendNoodle">Create new noodle</a></p>
+</div>
