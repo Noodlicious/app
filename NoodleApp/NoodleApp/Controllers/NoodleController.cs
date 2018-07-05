@@ -83,26 +83,57 @@ namespace NoodleApp.Controllers
 		/// </summary>
 		/// <param name="noodle">Noodle Object</param>
 		/// <returns>view of new noodle</returns>
+		/// 
+		//[HttpPost]
+		//public async Task<IActionResult> SendNoodle([Bind("Id, Name, BrandId, Flavor, Description, ImgUrl")]Noodle noodle)
+		//{
+		//	noodle.Id = 0;
+		//	noodle.BrandId = 0;
+		//	using (var client = new HttpClient())
+		//	{
+		//		// add the appropriate properties on top of the client base address.
+		//		client.BaseAddress = new Uri("https://noodliciousapi.azurewebsites.net/");
+		//		client.DefaultRequestHeaders.Accept.Clear();
+		//		client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+		//		//StringContent content = new StringContent(JsonConvert.SerializeObject(noodle), Encoding.UTF8, "application/json");
+		//		if (ModelState.IsValid)
+		//		{
+		//			HttpResponseMessage response = await client.PostAsJsonAsync("api/noodle", noodle);
+
+		//			if (response.IsSuccessStatusCode)
+		//			{
+		//				string data = await response.Content.ReadAsStringAsync();
+		//				noodle = JsonConvert.DeserializeObject<Noodle>(data);
+		//			}
+		//		}
+		//	}
+		//	return View(noodle);
+		//}
+
 		[HttpPost]
-		public async Task<IActionResult> SendNoodle([Bind("Id, Name, BrandId, Flavor, Description, ImgUrl")]Noodle noodle)
+		public async Task<IActionResult> SendNoodle(ViewNoodle noodle)
 		{
-			
+			noodle.Id = 0;
+			noodle.BrandId = 0;
 			using (var client = new HttpClient())
 			{
 				// add the appropriate properties on top of the client base address.
 				client.BaseAddress = new Uri("https://noodliciousapi.azurewebsites.net/");
-				//client.DefaultRequestHeaders.Accept.Clear();
-				//client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+				client.DefaultRequestHeaders.Accept.Clear();
+				client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-				StringContent content = new StringContent(JsonConvert.SerializeObject(noodle), Encoding.UTF8, "application/json");
-				HttpResponseMessage response = await client.PostAsync("api/noodle", content);
-
-				if (response.IsSuccessStatusCode)
+			
+				if (ModelState.IsValid)
 				{
-					string data = await response.Content.ReadAsStringAsync();
-					noodle = JsonConvert.DeserializeObject<Noodle>(data);
+					HttpResponseMessage response = await client.PostAsJsonAsync("api/noodle", noodle);
+
+					if (response.IsSuccessStatusCode)
+					{
+						string data = await response.Content.ReadAsStringAsync();
+					
+					}
 				}
-				
 			}
 			return View(noodle);
 		}
