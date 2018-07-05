@@ -148,23 +148,25 @@ namespace NoodleApp.Controllers
 			if (id.HasValue)
 			{
 
-				using (var client = new HttpClient())
-				{
-					// add the appropriate properties on top of the client base address.
-					client.BaseAddress = new Uri("https://noodliciousapi.azurewebsites.net/");
+				//using (var client = new HttpClient())
+				//{
+				//	// add the appropriate properties on top of the client base address.
+				//	client.BaseAddress = new Uri("https://noodliciousapi.azurewebsites.net/");
 
-					//the .Result is important for us to extract the result of the response from the call
-					var response = client.GetAsync($"/api/noodle/{id}").Result;
+				//	//the .Result is important for us to extract the result of the response from the call
+				//	var response = client.GetAsync($"/api/noodle/{id}").Result;
 
-					if (response.EnsureSuccessStatusCode().IsSuccessStatusCode)
-					{
-						var stringResult = await response.Content.ReadAsStringAsync();
-						var obj = JsonConvert.DeserializeObject<Noodle>(stringResult);
+				//	if (response.EnsureSuccessStatusCode().IsSuccessStatusCode)
+				//	{
+				//		var stringResult = await response.Content.ReadAsStringAsync();
+				//		var obj = JsonConvert.DeserializeObject<Noodle>(stringResult);
+
+				var foundNoodle = _context.Noodles.Find(id);
 						var reviewsForThisNoodle = await _context.Reviews.Where(x => x.NoodleId == id).ToListAsync();
 						
-						return View(obj);
-					}
-				}	
+						return View(foundNoodle);
+				//	}
+				//}	
 			}
 			return View();
 		}
@@ -186,6 +188,26 @@ namespace NoodleApp.Controllers
 			}
 
 			return View(await noodle.ToListAsync());
+		}
+
+		public async Task<IActionResult> TallyLikes(int id)
+		{
+
+			var tallyNoodle = _context.Noodles.Find(id);
+			tallyNoodle.Likes += 1;
+			await _context.SaveChangesAsync();
+
+			return RedirectToAction("Details" , new { id });
+		}
+
+		public async Task<IActionResult> TallyDislikes(int id)
+		{
+
+			var tallyNoodle = _context.Noodles.Find(id);
+			tallyNoodle.Dislikes += 1;
+			await _context.SaveChangesAsync();
+
+			return RedirectToAction("Details", new { id });
 		}
 	}
 }
