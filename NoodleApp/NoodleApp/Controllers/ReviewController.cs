@@ -66,7 +66,6 @@ namespace NoodleApp.Controllers
 				.ToListAsync();
 
 			return View(newModel);
-			
 		}
 
 		/// <summary>
