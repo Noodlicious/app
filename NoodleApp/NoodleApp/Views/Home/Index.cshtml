@@ -1,6 +1,37 @@
-﻿<h1>Ohai noodlrs</h1>
-<p><a asp-controller="Noodle" asp-action="ViewAllNoodles">Click here to get all noodles</a></p>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
 
-<p><a asp-controller="Review" asp-action="ViewAll">View reviews</a></p>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-warning">
+        <a href="/" class="navbar-brand">warning</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar7">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar7">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Link <span class="sr-only">Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="//codeply.com">Codeply</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-<p><a asp-controller="Noodle" asp-action="SendNoodle">Create new noodle</a></p>
+    <h1>Ohai noodlrs</h1>
+    <p><a asp-controller="Noodle" asp-action="ViewAllNoodles">Click here to get all noodles</a></p>
+
+    <p><a asp-controller="Review" asp-action="ViewAll">View reviews</a></p>
+
+    <p><a asp-controller="Noodle" asp-action="SendNoodle">Create new noodle</a></p>
+</body>
+</html>
