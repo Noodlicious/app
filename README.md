@@ -77,7 +77,23 @@ Click on "View Details" and we can now see all the information we just added for
 
 ![Added Noodle Info](/Assets/addedNoodleInfo.png)
 
-If you're in the mood, vote on whether or not you like or dislike Maruchan with the built in voting capabilities of Noodlicious!
+If you're in the mood, vote on whether or not you like or dislike Maruchan with the built in voting capabilities of Noodlicious!  Thank you for visiting.  We hope you have made a well informed decision on which noodle to try!
+
+---
+## Dependencies for the Noodlicious App
+This API was built on .NET Core 2.1, which can be downloaded [here](https://www.microsoft.com/net/download/macos).
+
+---
+## Build for the Noodlicious App
+To run this app locally, install the [.NET Core 2.1 SDK](https://www.microsoft.com/net/download/macos), 
+clone this repo onto your machine. From a terminal interface, go to where this was 
+cloned and type the following commands:
+
+```
+cd NoodleApp
+dotnet restore
+dotnet run
+```
 
 ---
 ## Acknowledgements
