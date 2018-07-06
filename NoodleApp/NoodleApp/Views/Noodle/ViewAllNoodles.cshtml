@@ -3,9 +3,9 @@
 @{
     Layout = "_Layout";
 }
-<div class="container-fluid">
+<div class="container" style="text-align:center">
 
-    <form asp-controller="Noodle" asp-action="SearchResult">
+    <form asp-controller="Noodle" asp-action="SearchResult" id="searchForm">
         <p>
             Search for Noodle: <input type="text" name="SearchString">
             <input type="submit" value="Filter" />

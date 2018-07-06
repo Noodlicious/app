@@ -4,28 +4,38 @@
     Layout = "_Layout";
 }
 
-<div class="container-fluid">
+<div class="container">
 
-    <h2> Create a New Noodle</h2>
+    <h2 class="noodleCreateTitle"> Create a New Noodle</h2>
 
-    <form asp-controller="Noodle" asp-action="SendNoodle">
+    <form asp-controller="Noodle" asp-action="SendNoodle" class="form-control" align="center">
+        <div class="form-group">
+            <input asp-for="@Model.Id" type="hidden" />
+        </div>
 
-        <input asp-for="@Model.Id" type="hidden" />
-
-        <label asp-for="@Model.Name">Noodle: </label>
-        <input asp-for="@Model.Name" />
-
-        <input asp-for="@Model.BrandId" type="hidden" />
-
-        <label asp-for="@Model.Flavor">Flavor: </label>
-        <input asp-for="@Model.Flavor" />
-
-        <label asp-for="@Model.ImgUrl">Image Link: </label>
-        <input asp-for="@Model.ImgUrl" />
-
-        <label asp-for="@Model.Description">Description: </label>
-        <input asp-for="@Model.Description" />
-
-        <input type="submit" value="SendNoodle" />
+        <div class="form-group">
+            <label asp-for="@Model.Name">Noodle: </label>
+            <br />
+            <input asp-for="@Model.Name" />
+        </div>
+        <div class="form-group">
+            <input asp-for="@Model.BrandId" type="hidden" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Flavor">Flavor: </label>
+            <br />
+            <input asp-for="@Model.Flavor" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.ImgUrl">Image Link: </label>
+            <br />
+            <input asp-for="@Model.ImgUrl" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Description">Description: </label>
+            <br />
+            <input asp-for="@Model.Description" />
+        </div>
+        <button class="btn btn-primary" type="submit" value="SendNoodle">Submit</button>
     </form>
 </div>

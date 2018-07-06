@@ -175,7 +175,7 @@ See if it's there by following the "GET a noodle by ID" directions:
 
 ---
 ## Acknowledgements
-- A **huge** thanks to the [Noodlicious team](https://github.com/Noodlicious): [jcqnly](https://github.com/jcqnly), [Steph](https://github.com/IndigoShock)
+- A **huge** thanks to the [Noodlicious team](https://github.com/Noodlicious): [jcqnly](https://github.com/jcqnly), [Steph, my life partner](https://github.com/IndigoShock)
 and [Ben](https://github.com/btaylor93).
 
 - Thanks to yerkee.com for the fortune API.

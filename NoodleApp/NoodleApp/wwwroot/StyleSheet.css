@@ -1,9 +1,38 @@
-﻿h2 
-{
+﻿h2 {
     font-style: italic;
 }
 
 body img {
-	max-height: 200px;
-	max-width: 200px;
+    max-height: 200px;
+    max-width: 200px;
+}
+
+#searchForm {
+    margin-top: 2.5em;
+    margin-bottom: 1.5em;
+}
+
+#reviewTitle {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+.thumbs {
+    display: inline-block;
+    max-height: 25px;
+    max-width: 25px;
+}
+
+.noodleCreateTitle {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.homePageTitle {
+    margin-top: 0.8em;
+}
+
+#noodleDetailTitle {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
 }
