@@ -110,7 +110,7 @@ namespace NoodleApp.Controllers
 
 				return View(review);
 			}
-			return RedirectToAction("index", "home");
+			return RedirectToAction("Index", "Home");
 		}
 
 		/// <summary>
@@ -123,7 +123,7 @@ namespace NoodleApp.Controllers
 		{
 			_context.Reviews.Update(review);
 			await _context.SaveChangesAsync();
-			return RedirectToAction("Index", "Home");
+			return RedirectToAction("ViewAll", "Review");
 		}
 
 		/// <summary>
@@ -147,3 +147,4 @@ namespace NoodleApp.Controllers
 		}
 	}
 }
+
