@@ -4,14 +4,14 @@
     Layout = "_Layout";
 }
 
-<div class="container-fluid">
+<div class="container" style="text-align:center">
 
-    <h1>Welcome to the Noodlicious app! </h1>
+    <h1 class="homePageTitle">Welcome to the Noodlicious app! </h1>
+    <br />
     <p>Got a hankering for instant noodles but feel overwhelmed by which one(s) to try? </p>
     <br />
-    <p>Click on any of the in the navigation bar to start your experience.</p>
+    <p>Click on any of the choices in the navigation bar to start your experience.</p>
     <br />
-
     <p>@Model.fortune</p>
     <p><a asp-controller="Home" asp-action="Index">Feeling lucky?</a></p>
 

@@ -3,9 +3,9 @@
     Layout = "_Layout";
 }
 
-<div class="container-fluid">
+<div class="container">
 
-    <h2>All Reviews for Noodles </h2>
+    <h2 id="reviewTitle">All Reviews for Noodles </h2>
 
     @foreach (var x in Model)
     {
@@ -15,6 +15,5 @@
             </tr>
         </table>
         <p><a asp-controller="Review" asp-action="Update" asp-route-id="@x.ID">Update Review</a></p>
-        <p><a asp-controller="Review" asp-action="Delete" asp-route-id="@x.NoodleId">Delete Review</a></p>
     }
 </div>

@@ -3,19 +3,19 @@
     Layout = "_Layout";
 }
 
-<div class="container-fluid">
+<div class="container">
 
-    <h1>Noodle Details</h1>
+    <h1 id="noodleDetailTitle">Noodle Details</h1>
 
     <h2>Who's there? <strong>@Model.Name</strong>, that's who!</h2>
 
     <p>Mmm...that taste of: <strong>@Model.Flavor</strong></p>
     <p><strong>What about it?</strong> @Model.Description</p>
     <img src="@Model.ImgUrl" />
-    <p>The people have spoken. User Score: Likes @Model.Likes Dislikes @Model.Dislikes</p>
+    <strong><p>The people have spoken. User Score: Likes @Model.Likes Dislikes @Model.Dislikes</p></strong>
 
-    <p><a asp-controller="Noodle" asp-action="TallyLikes" asp-route-id="@Model.Id">Thumbs up</a></p>
-    <p><a asp-controller="Noodle" asp-action="TallyDislikes" asp-route-id="@Model.Id">Thumbs down</a></p>
+    <a asp-controller="Noodle" asp-action="TallyLikes" asp-route-id="@Model.Id"><img class="thumbs" src="~/thumbsUp.png" /></a>
+    <a asp-controller="Noodle" asp-action="TallyDislikes" asp-route-id="@Model.Id"><img class="thumbs" src="~/thumbsDown.png" /></a>
 
     <h2><a asp-controller="Review" asp-action="AllReviews" asp-route-id="@Model.Id">What are people saying about @Model.Name ?</a></h2>
     <p><a asp-controller="Review" asp-action="Create" asp-route-id="@Model.Id">Add review</a></p>
