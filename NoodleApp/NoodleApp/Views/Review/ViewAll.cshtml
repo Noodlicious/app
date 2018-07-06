@@ -3,15 +3,18 @@
     Layout = "_Layout";
 }
 
-<h2>All Reviews for Noodles </h2>
+<div class="container-fluid">
 
-@foreach (var x in Model)
-{
-    <table>
-        <tr>
-            <td>Review: @x.Name</td>
-        </tr>
-    </table>
-    <p><a asp-controller="Review" asp-action="Update" asp-route-id="@x.ID">Update Review</a></p>
-    <p><a asp-controller="Review" asp-action="Delete" asp-route-id="@x.NoodleId">Delete Review</a></p>
-}
+    <h2>All Reviews for Noodles </h2>
+
+    @foreach (var x in Model)
+    {
+        <table>
+            <tr>
+                <td>Review: @x.Name</td>
+            </tr>
+        </table>
+        <p><a asp-controller="Review" asp-action="Update" asp-route-id="@x.ID">Update Review</a></p>
+        <p><a asp-controller="Review" asp-action="Delete" asp-route-id="@x.NoodleId">Delete Review</a></p>
+    }
+</div>

@@ -3,20 +3,21 @@
 @{
     Layout = "_Layout";
 }
+<div class="container-fluid">
 
-<form asp-controller="Noodle" asp-action="SearchResult">
-    <p>
-        Search for Noodle: <input type="text" name="SearchString">
-        <input type="submit" value="Filter" />
-    </p>
-</form>
+    <form asp-controller="Noodle" asp-action="SearchResult">
+        <p>
+            Search for Noodle: <input type="text" name="SearchString">
+            <input type="submit" value="Filter" />
+        </p>
+    </form>
 
-@foreach (var item in Model)
-{
-    <h2>Name: @item.Name</h2>
-    <p>Flavor Profile: @item.Flavor</p>
-    <img src="@item.ImgUrl" />
-    <p>@item.Id</p>
+    @foreach (var item in Model)
+    {
+        <h2>Name: @item.Name</h2>
+        <p>Flavor Profile: @item.Flavor</p>
+        <img src="@item.ImgUrl" />
 
-    <p><a asp-controller="Noodle" asp-action="Details" asp-route-id="@item.Id">View Details</a></p>
-}
+        <p><a asp-controller="Noodle" asp-action="Details" asp-route-id="@item.Id">View Details</a></p>
+    }
+</div>

@@ -4,12 +4,15 @@
     Layout = "_Layout";
 }
 
-<h1>Update Review</h1>
+<div class="container-fluid">
 
-<form asp-action="Update">
+    <h1>Update Review</h1>
 
-    <label asp-for="Name"> Name: </label>
-    <input asp-for="Name" />
-    <input asp-for="NoodleId" type="hidden" />
-    <input asp-controller="Review" asp-action="Update" type="submit" />
-</form>
+    <form asp-action="Update">
+
+        <label asp-for="Name"> Name: </label>
+        <input asp-for="Name" />
+        <input asp-for="NoodleId" type="hidden" />
+        <input asp-controller="Review" asp-action="Update" type="submit" />
+    </form>
+</div>
