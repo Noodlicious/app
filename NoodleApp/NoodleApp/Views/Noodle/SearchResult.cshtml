@@ -3,17 +3,20 @@
     Layout = "_Layout";
 }
 
-<h2>Search Results </h2>
+<div class="container-fluid">
 
-@foreach (var x in Model)
-{
+    <h2>Search Results </h2>
 
-    <p>@x.Name</p>
-    <p>@x.BrandId</p>
-    <p>@x.Flavor</p>
-    <p>@x.Description</p>
-    <p><img src="@x.ImgUrl" /></p>
-    <p>@x.Id</p>
+    @foreach (var x in Model)
+    {
 
-    <p><a asp-controller="Noodle" asp-action="Details" asp-route-id="@x.Id">View Details</a></p>
-}
+        <p>@x.Name</p>
+        <p>@x.BrandId</p>
+        <p>@x.Flavor</p>
+        <p>@x.Description</p>
+        <p><img src="@x.ImgUrl" /></p>
+        <p>@x.Id</p>
+
+        <p><a asp-controller="Noodle" asp-action="Details" asp-route-id="@x.Id">View Details</a></p>
+    }
+</div>
