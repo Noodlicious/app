@@ -17,7 +17,9 @@ namespace NoodleApp.Migrations
                     BrandId = table.Column<int>(nullable: false),
                     Flavor = table.Column<string>(nullable: true),
                     ImgUrl = table.Column<string>(nullable: true),
-                    Description = table.Column<string>(nullable: true)
+                    Description = table.Column<string>(nullable: true),
+                    Likes = table.Column<int>(nullable: false),
+                    Dislikes = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

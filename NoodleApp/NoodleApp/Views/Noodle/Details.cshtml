@@ -3,18 +3,21 @@
     Layout = "_Layout";
 }
 
-<h1>Noodle Details</h1>
+<div class="container-fluid">
 
-<h2>Who's there? <strong>@Model.Name</strong>, that's who!</h2>
+    <h1>Noodle Details</h1>
 
-<p>Mmm...that taste of: <strong>@Model.Flavor</strong></p>
-<p><strong>What about it?</strong> @Model.Description</p>
-<img src="@Model.ImgUrl" />
-<p>The people have spoken. User Score: Likes @Model.Likes Dislikes @Model.Dislikes</p>
+    <h2>Who's there? <strong>@Model.Name</strong>, that's who!</h2>
 
-<p><a asp-controller="Noodle" asp-action="TallyLikes" asp-route-id="@Model.Id">Thumbs up</a></p>
-<p><a asp-controller="Noodle" asp-action="TallyDislikes" asp-route-id="@Model.Id">Thumbs down</a></p>
+    <p>Mmm...that taste of: <strong>@Model.Flavor</strong></p>
+    <p><strong>What about it?</strong> @Model.Description</p>
+    <img src="@Model.ImgUrl" />
+    <p>The people have spoken. User Score: Likes @Model.Likes Dislikes @Model.Dislikes</p>
 
-<h2><a asp-controller="Review" asp-action="AllReviews" asp-route-id="@Model.Id">What are people saying about @Model.Name ?</a></h2>
-<p><a asp-controller="Review" asp-action="Create" asp-route-id="@Model.Id">Add review</a></p>
-<p><a asp-controller="Home" asp-action="Index">Return Home</a></p>
+    <p><a asp-controller="Noodle" asp-action="TallyLikes" asp-route-id="@Model.Id">Thumbs up</a></p>
+    <p><a asp-controller="Noodle" asp-action="TallyDislikes" asp-route-id="@Model.Id">Thumbs down</a></p>
+
+    <h2><a asp-controller="Review" asp-action="AllReviews" asp-route-id="@Model.Id">What are people saying about @Model.Name ?</a></h2>
+    <p><a asp-controller="Review" asp-action="Create" asp-route-id="@Model.Id">Add review</a></p>
+    <p><a asp-controller="Home" asp-action="Index">Return Home</a></p>
+</div>
