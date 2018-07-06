@@ -71,7 +71,10 @@ namespace NoodleApp.Controllers
 		}
 
 		
-		
+		/// <summary>
+		/// method to send user to create noodle form
+		/// </summary>
+		/// <returns>returns user to form view</returns>
 		public async Task<IActionResult> SendNoodle()
 		{
 
@@ -81,38 +84,10 @@ namespace NoodleApp.Controllers
 		}
 
 		/// <summary>
-		/// method to send new noodle data to API
+		/// method to submit form information and post into API
 		/// </summary>
-		/// <param name="noodle">Noodle Object</param>
-		/// <returns>view of new noodle</returns>
-		/// 
-		//[HttpPost]
-		//public async Task<IActionResult> SendNoodle([Bind("Id, Name, BrandId, Flavor, Description, ImgUrl")]Noodle noodle)
-		//{
-		//	noodle.Id = 0;
-		//	noodle.BrandId = 0;
-		//	using (var client = new HttpClient())
-		//	{
-		//		// add the appropriate properties on top of the client base address.
-		//		client.BaseAddress = new Uri("https://noodliciousapi.azurewebsites.net/");
-		//		client.DefaultRequestHeaders.Accept.Clear();
-		//		client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-		//		//StringContent content = new StringContent(JsonConvert.SerializeObject(noodle), Encoding.UTF8, "application/json");
-		//		if (ModelState.IsValid)
-		//		{
-		//			HttpResponseMessage response = await client.PostAsJsonAsync("api/noodle", noodle);
-
-		//			if (response.IsSuccessStatusCode)
-		//			{
-		//				string data = await response.Content.ReadAsStringAsync();
-		//				noodle = JsonConvert.DeserializeObject<Noodle>(data);
-		//			}
-		//		}
-		//	}
-		//	return View(noodle);
-		//}
-
+		/// <param name="noodle">noodle object taken from form data</param>
+		/// <returns>returns view with new noodle object</returns>
 		[HttpPost]
 		public async Task<IActionResult> SendNoodle(ViewNoodle noodle)
 		{
@@ -141,9 +116,9 @@ namespace NoodleApp.Controllers
 		}
 
 		/// <summary>
-		/// API request method to retrieve one noodle and display on page in a details view
+		/// API request method to retrieve one noodle and display on page in a details view, switched to do the same from server database. 
 		/// </summary>
-		/// <param name="id"></param>
+		/// <param name="id">nullable integer id received from API noodle primary key</param>
 		/// <returns>object from API and displays on page</returns>
 		public async Task<IActionResult> Details(int? id)
 		{
@@ -192,6 +167,11 @@ namespace NoodleApp.Controllers
 			return View(await noodle.ToListAsync());
 		}
 
+		/// <summary>
+		/// method to tally user likes for a particular noodle
+		/// </summary>
+		/// <param name="id">nullable integer id corresponding to noodle primary key</param>
+		/// <returns>returns user to details view with new likes tally</returns>
 		public async Task<IActionResult> TallyLikes(int id)
 		{
 
@@ -202,6 +182,11 @@ namespace NoodleApp.Controllers
 			return RedirectToAction("Details" , new { id });
 		}
 
+		/// <summary>
+		/// method to tally user dislikes
+		/// </summary>
+		/// <param name="id">nullable integer id corresponding to noodle primary key</param>
+		/// <returns>user to details view with dislikes updated</returns>
 		public async Task<IActionResult> TallyDislikes(int id)
 		{
 
