@@ -10,8 +10,8 @@ using NoodleApp.Data;
 namespace NoodleApp.Migrations
 {
     [DbContext(typeof(NoodleFrontDbContext))]
-    [Migration("20180705224824_AddedDislikesToDb")]
-    partial class AddedDislikesToDb
+    [Migration("20180705233841_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
