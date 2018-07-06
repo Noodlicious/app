@@ -97,7 +97,7 @@ dotnet run
 
 ---
 ## Acknowledgements
-- The [Noodlicious team](https://github.com/Noodlicious) because all of this was made possible by us: [jaatay](https://github.com/jaatay), [jcqnly](https://github.com/jcqnly), [Steph, Jesse's life partner](https://github.com/IndigoShock) and [Ben](https://github.com/btaylor93).
+- The [Noodlicious team](https://github.com/Noodlicious) is awesome because all of this was made possible by us: [jaatay](https://github.com/jaatay), [jcqnly](https://github.com/jcqnly), [Steph, Jesse's life partner](https://github.com/IndigoShock) and [Ben](https://github.com/btaylor93).
 
 - Thanks to yerkee.com for the fortune API.
 
