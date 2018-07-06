@@ -1,13 +1,20 @@
-﻿@{
-    Layout = "_Layout";
+﻿@model NoodleApp.Models.Fortune
+
+
+@{
+	Layout = "_Layout";
 }
 
 <div class="container-fluid">
-    <h1>Ohai noodlrs</h1>
+	<h1>Ohai noodlrs</h1>
 
-    <p><a asp-controller="Noodle" asp-action="ViewAllNoodles">Click here to get all noodles</a></p>
+	<p><a asp-controller="Noodle" asp-action="ViewAllNoodles">Click here to get all noodles</a></p>
 
-    <p><a asp-controller="Review" asp-action="ViewAll">View reviews</a></p>
+	<p><a asp-controller="Review" asp-action="ViewAll">View reviews</a></p>
 
-    <p><a asp-controller="Noodle" asp-action="SendNoodle">Create new noodle</a></p>
+	<p><a asp-controller="Noodle" asp-action="SendNoodle">Create new noodle</a></p>
+
 </div>
+
+<p>@Model.fortune</p>
+<p><a asp-controller="Home" asp-action="Index">Feeling lucky?</a></p>
