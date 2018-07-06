@@ -179,3 +179,5 @@ See if it's there by following the "GET a noodle by ID" directions:
 and [btaylor93](https://github.com/btaylor93).
 
 - Thanks to yerkee.com for the fortune API.
+
+-Thanks to [Luther](https://github.com/LutherMckeiver) for life.
