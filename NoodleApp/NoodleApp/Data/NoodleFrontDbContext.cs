@@ -9,7 +9,10 @@ namespace NoodleApp.Data
 {
     public class NoodleFrontDbContext : DbContext
     {
-
+		/// <summary>
+		/// sets database context to derived class of DbContext
+		/// </summary>
+		/// <param name="options">Db context with base options</param>
         public NoodleFrontDbContext(DbContextOptions<NoodleFrontDbContext> options) : base(options)
         {
         }

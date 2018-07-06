@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace NoodleApp.Models
-{
+{	/// <summary>
+/// model with nullable integer types to send to database
+/// </summary>
     public class ViewNoodle
     {
         public int? Id { get; set; }

@@ -6,7 +6,9 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace NoodleApp.Models
-{
+{	/// <summary>
+/// review model
+/// </summary>
     public class Review
     {
 		
@@ -16,7 +18,9 @@ namespace NoodleApp.Models
         [Required]
         public string Name { get; set; }
 		
-		
+		/// <summary>
+		/// integer id to link reviews to noodle API primary key
+		/// </summary>
 		public int NoodleId { get; set; }
 
     }

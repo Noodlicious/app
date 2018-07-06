@@ -10,7 +10,9 @@ namespace NoodleApp.Models
 	public class Noodle
 	{
 		
-		
+		/// <summary>
+		/// nullable integer id, set to nullable in order to allow override from API database primary key
+		/// </summary>
 		public int? Id { get; set; }
 
 		[Required]

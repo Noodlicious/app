@@ -38,12 +38,14 @@ namespace NoodleApp.Controllers
                 //the .Result is important for us to extract the result of the response from the call
                 var response = client.GetAsync("/api/noodle").Result;
 
+				//conditional to check if response is successful
                 if (response.EnsureSuccessStatusCode().IsSuccessStatusCode)
                 {
 
                     var stringResult = await response.Content.ReadAsStringAsync();
 					var obj = JsonConvert.DeserializeObject<List<Noodle>>(stringResult);
 
+					//logic to create noodle entry in database if it doesnt exist
 					foreach (var item in obj)
 					{
 							Noodle alreadyExists = await _context.Noodles.FirstOrDefaultAsync(x => x.Name == item.Name);
