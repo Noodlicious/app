@@ -1,4 +1,6 @@
 # Noodlicious App
+Got a hankering for instant noodles but feel overwhelmed by which one(s) to try?
+Follow the walk through for guidance on how to use Noodlicious.
 
 ## Overview
 The Noodilicious App is built on .NET Core 2.1 and resides [here](http://noodlicio.us/).
@@ -6,177 +8,80 @@ The app provides a user interface for the Noodlicious API.
 
 The app has its own server and database. Once consuming the Noodlicious API, the server database is populated with the current info. We made the decision not to allow users to directly perform CRUD operations on the API. Instead, a Create Noodle form is provided to demonstrate the functionality, in that the app is capable of interacting with the API. 
 
-Internally to the app, once the database is populated, the user can view the noodles, and perform CRUD operations on the reviews. The user is also able to search the list based on a name string, which will return results for either full or partial input. The user is also able to view a detailed model of the noodles, which provides more information on the noodle type itself, along with a user-rating like-or-dislike function, which keeps track of the total thumbs up or thumbs down votes. A user can also see reviews left by others. Reviews are stored in a separate table within the app database, and joined with the specific noodle type when the user moves to the detail view.
+Internally to the app, once the database is populated, the user can view the noodles, and perform CRUD operations on the reviews. The user is also able to search the list based on a name string, which will return results for either full or partial input. The user is also able to view a detailed model of the noodles, which provides more information on the noodle type itself.  Additionally, a user-rating like-or-dislike functionality is included, which keeps track of the total thumbs up or thumbs down votes. A user can also see reviews left by others. Reviews are stored in a separate table within the app database, and joined with the specific noodle type when the user moves to the detail view.
 
 There is also a third-party API consumed to provide random fortunes/wisdom quotes whenever the user returns to the home index view, or clicks the "Feeling Lucky" button.
+
 ---
 ## Walk Through
 
-The following section will provide a screenshot walkthrough of how to use the app.
+The following section will provide a screenshot walkthrough of how to use Noodlicious.
 
 #### Home Page:
 
-**localhost:yourPortNumber/api/brand** or
+Welcome to Noodlicious!
 
-**https://noodliciousapi.azurewebsites.net/api/brand**
+![Home Page](/Assets/landingPage.png)
 
-Click "Try It Out" and then "Execute" in order to see all the brands:
+Click "Search All Noodles" and let's get started!
 
-![Get All Brands](/Assets/getBrand.png)
+#### Search All Noodles:
 
-![See All Brands](/Assets/getBrandJSON.png)
+So many choices!  Where do we begin?!  Why not type in "ramen" and see what we get?
 
+![Search All Noodles](/Assets/search.png)
 
-#### Noodle List View:
+#### Search Results:
 
-**localhost:yourPortNumber/api/brand/`{id}`**
+Hmm, Jin Ramen?  What's that?  Click "View Details" and let's find out...
 
-**https://noodliciousapi.azurewebsites.net/api/brand/{id}**
+![Search Results](/Assets/searchResults.png)
 
-where id is the id of a brand
+#### View Details:
 
-Click "Try It Out":
+There's so much to learn about Jin Ramen:
 
-![Get Brand By ID](/Assets/getBrandByID.png)
+![View Details](/Assets/viewDetails.png)
 
-Enter in 2, for this example, and then click "Execute":
+If you're familiar with Jin Ramen, feel free to like or dislike the product.
 
-![Get Brand By ID Type In Id](/Assets/getBrandByIDTypeInId.png)
+If you're not familiar with Jin Ramen, click the link below the thumbs to read what people are saying about Jin Ramen.
 
-Use 2 for this example:
+#### View Reviews:
 
-![Show Brand By Id](/Assets/getBrandByIDJSON.png)
+![View Review](/Assets/viewReviews.png)
 
+Since Noodlicious is a full stack application, the reviews can be updated.  Let's update that review:
 
-#### Noodle detail view:
+![Update Review](/Assets/updateReview.png)
 
-**localhost:yourPortNumber/api/brand** or
+You'll then be redirected to a page with all reviews, where you can read reviews left by others:
 
-**https://noodliciousapi.azurewebsites.net/api/brand**
+![View Update](/Assets/viewUpdate.png)
 
-Click "Try It Out":
+This list of reviews can also be navigated to at all times from the navbar at the top of the page.
 
-![Post New Brand](/Assets/postNewBrand.png)
+#### Create a Noodle:
 
-We'll be using "SamYang", the hottest ramen brand, for this example.
-Swagger will display "Id", but we don't need it because the database
-will assign it an ID number.  Delete the Id portion when typing
-in info for a new brand.
+Don't see a noodle that should be on the Noodlicious app?  Well, feel free to add one to the system.  Let's use every college student's $0.20 favorite, Maruchan, for this example!
 
-![Post New Brand Example](/Assets/postNewBrandEx.png)
+![Add a Noodle](/Assets/createNoodleInfo.png)
 
-Swagger will show the new entry:
+Let's see if Maruchan has been added.  Click "Search All Noodles" from the top navbar menu and scroll down.  Well, well, well, Maruchan is now on the Noodilicous app!  Yay!
 
-![Post New Brand Response](/Assets/postNewBrandResponse.png)
-
-#### Add a review:
-
-**localhost:yourPortNumber/api/brand/`{id}`**
-
-**https://noodliciousapi.azurewebsites.net/api/brand/{id}**
-
-where id is the id of a brand
-
-Click "Try It Out":
-
-![Update A Brand](/Assets/updateBrand.png)
-
-Let's update the SamYang example we created earlier.  Type the name in ALL
-CAPS and let's say they're a North Korean company.  The ID is needed for this
-entry.  We can tell which ID it is from the POST request made in the previous
-section:
-
-![Update A Brand Example](/Assets/updateBrandEx.png)
-
-Go back to the "GET a brand by ID" direction to check the update:
-
-![Check Update](/Assets/checkUpdate.png)
-
-The response shows that SamYang has been updated:
-
-![Check Update Works](/Assets/checkUpdateWorks.png)
-
-#### Update a review:
-
-**localhost:yourPortNumber/api/brand/`{id}`**
-
-**https://noodliciousapi.azurewebsites.net/api/brand/{id}**
-
-where id is the id of a brand
-
-Let's delete the SAMYANG entry:
-
-![Delete Brand By Id](/Assets/deleteBrandById.png)
-
-See if it's still there by following the directions for 
-"GET all brands" directions:
-
-![Check Delete Work](/Assets/getBrand.png)
-
-SAMYANG is no longer in the list of brands:
-
-![List After Deletion](/Assets/deleteBrandWorks.png)
-
-#### Delete a review:
-
-**localhost:yourPortNumber/api/noodle** or
-
-**https://noodliciousapi.azurewebsites.net/api/noodle**
-
-![Get All Noodle](/Assets/getAllNoodle.png)
-
-Click "Try It Out" and then "Execute" in order to see all the noodles:
-
-![See All Noodle](/Assets/getAllNoodleJSON.png)
+![See New Noodle](/Assets/addedNoodle.png)
 
 #### Vote thumbs up or down:
 
-**localhost:yourPortNumber/api/noodle`{id}`** or
+Click on "View Details" and we can now see all the information we just added for Maruchan:
 
-**https://noodliciousapi.azurewebsites.net/api/noodle/{id}**
+![Added Noodle Info](/Assets/addedNoodleInfo.png)
 
-where id is the id of a brand
-
-Click "Try It Out":
-
-![Get Noodle By Id](/Assets/getNoodleById.png)
-
-Enter 4 for this example and click "Execute":
-
-![Get Noodle By Id With Id](/Assets/getNoodleByIdWithId.png)
-
-The information for brand #4 will be displayed in a JSON format:
-![See Noodle Info](/Assets/getNoodleByIdJSON.png)
-
-#### Add a new noodle
-
-**localhost:yourPortNumber/api/noodle** or
-
-**https://noodliciousapi.azurewebsites.net/api/noodle**
-
-Click "Try It Out":
-
-![Post New Brand](/Assets/postNewBrand.png)
-
-We'll be using "Cup of Noodle", a college staple, for this example.
-Swagger will display "Id", but we don't need it because the database
-will assign it an ID number.  Delete the Id portion when typing
-in a info for a new noodle.
-
-![Post New Noodle Example](/Assets/postNoodleEx.png)
-
-See if it's there by following the "GET a noodle by ID" directions:
-
-![Post New Noodle Response](/Assets/ViewAddedNoodle.png)
-
-
-
-
+If you're in the mood, vote on whether or not you like or dislike Maruchan with the built in voting capabilities of Noodlicious!
 
 ---
 ## Acknowledgements
-- A **huge** thanks to the [Noodlicious team](https://github.com/Noodlicious): [jcqnly](https://github.com/jcqnly), [Steph, my life partner](https://github.com/IndigoShock)
-and [Ben](https://github.com/btaylor93).
+- The [Noodlicious team](https://github.com/Noodlicious) because all of this was made possible by us: [jaatay](https://github.com/jaatay), [jcqnly](https://github.com/jcqnly), [Steph, Jesse's life partner](https://github.com/IndigoShock) and [Ben](https://github.com/btaylor93).
 
 - Thanks to yerkee.com for the fortune API.
 
