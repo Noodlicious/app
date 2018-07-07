@@ -4,11 +4,11 @@ Follow the walk through for guidance on how to use Noodlicious.
 
 ## Overview
 The Noodilicious App is built on .NET Core 2.1 and resides [here](http://noodlicio.us/).
-The app provides a user interface for the Noodlicious API.  
+The app provides a user interface for the [Noodlicious API](https://github.com/Noodlicious/api).  
 
-The app has its own server and database. Once consuming the Noodlicious API, the server database is populated with the current info. We made the decision not to allow users to directly perform CRUD operations on the API. Instead, a Create Noodle form is provided to demonstrate the functionality, in that the app is capable of interacting with the API. 
+The app has its own server and database. After consuming the Noodlicious API, the server database is populated with the current info. We made the decision not to allow users to directly perform CRUD (Create, Read, Update, Delete) operations on the API. Instead, a Create Noodle form is provided to demonstrate the functionality, in that the app is capable of interacting with the API. 
 
-Internally to the app, once the database is populated, the user can view the noodles, and perform CRUD operations on the reviews. The user is also able to search the list based on a name string, which will return results for either full or partial input. The user is also able to view a detailed model of the noodles, which provides more information on the noodle type itself.  Additionally, a user-rating like-or-dislike functionality is included, which keeps track of the total thumbs up or thumbs down votes. A user can also see reviews left by others. Reviews are stored in a separate table within the app database, and joined with the specific noodle type when the user moves to the detail view.
+Internally to the app, once the database is populated, the user can view the noodles, and perform CRUD (Create, Read, Update, Delete) operations on the reviews. The user is also able to search the list based on a name string, which will return results for either full or partial input. The user is also able to view a detailed model of the noodles, which provides more information on the noodle type itself.  Additionally, a user-rating like-or-dislike functionality is included, which keeps track of the total thumbs up or thumbs down votes. A user can also see reviews left by others. Reviews are stored in a separate table within the app database, and joined with the specific noodle type when the user moves to the detail view.
 
 There is also a third-party API consumed to provide random fortunes/wisdom quotes whenever the user returns to the home index view, or clicks the "Feeling Lucky" button.
 
@@ -77,7 +77,23 @@ Click on "View Details" and we can now see all the information we just added for
 
 ![Added Noodle Info](/Assets/addedNoodleInfo.png)
 
-If you're in the mood, vote on whether or not you like or dislike Maruchan with the built in voting capabilities of Noodlicious!  Thank you for visiting.  We hope you have made a well informed decision on which noodle to try!
+If you're in the mood, vote on whether or not you like or dislike Maruchan with the built in voting capabilities of Noodlicious!
+
+#### Delete a review:
+
+Finally, a user is able to delete reviews on Noodlicious.  Navigate back to "Search All Noodles" and click on "View Details" for any of the options.  We'll use Shin Black for this demo:
+
+![View Shin Black Details](/Assets/deleteNoodle1.png)
+
+Click on "What are people saying about Shin Black" and you will see the current reviews:
+
+![Shin Black Reviews](/Assets/deleteNoodle2.png)
+
+From here, there will options to update or delete.  Let's delete this review.  After deleting this review, you'll be redirected to "View Reviews" where the review for Shin Black is no longer there:
+
+![Deleted Review Gone](/Assets/deleteNoodle3.png)
+
+Thank you for visiting.  We hope you have made a well informed decision on which noodle to try!
 
 ---
 ## Dependencies for the Noodlicious App
